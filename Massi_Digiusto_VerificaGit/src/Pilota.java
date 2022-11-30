@@ -48,4 +48,9 @@ public class Pilota {
         return ruolo;
     }
 
+    public String toString(){
+
+        return nome +" "+ cognome;
+
+    }
 }
