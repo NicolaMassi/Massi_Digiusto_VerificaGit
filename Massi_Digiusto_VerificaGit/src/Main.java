@@ -5,8 +5,17 @@ public class Main {
         Aeroporto aeroporto = new Aeroporto();
 
         aeroporto = InserimentoAeroporto();
+
+        String listaAerei = "";
+
+        Aereo aereiAux[] = new Aereo[3];
+        aereiAux = aeroporto.getAerei();
+
+        for(int i = 0; i < aereiAux.length; i++){
+            listaAerei += ", " + aereiAux[i];
+        }
         
-        System.out.println("L'aeroporto di " + aeroporto.getCitta() + " ha una superficie di " + aeroporto.getSuperficie());
+        System.out.println("L'aeroporto di " + aeroporto.getCitta() + " ha una superficie di " + aeroporto.getSuperficie() + ". Gli aerei disponibili sono "+ listaAerei +". Ci lavorano i piloti "+ );
 
     }
     public static Aeroporto InserimentoAeroporto(){
