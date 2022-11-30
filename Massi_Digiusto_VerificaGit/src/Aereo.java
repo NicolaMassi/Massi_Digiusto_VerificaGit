@@ -48,4 +48,9 @@ public class Aereo {
         return modello;
     }
 
+    public String toString(){
+
+        return codice + " "+ produttore +" "+ modello;
+    }
+
 }

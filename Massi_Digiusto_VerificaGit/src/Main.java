@@ -5,17 +5,8 @@ public class Main {
         Aeroporto aeroporto = new Aeroporto();
 
         aeroporto = InserimentoAeroporto();
-
-        String listaAerei = "";
-
-        Aereo aereiAux[] = new Aereo[3];
-        aereiAux = aeroporto.getAerei();
-
-        for(int i = 0; i < aereiAux.length; i++){
-            listaAerei += ", " + aereiAux[i];
-        }
         
-        System.out.println("L'aeroporto di " + aeroporto.getCitta() + " ha una superficie di " + aeroporto.getSuperficie() + ". Gli aerei disponibili sono "+ listaAerei +". Ci lavorano i piloti "+ );
+        System.out.println("L'aeroporto di " + aeroporto.getCitta() + " ha una superficie di " + aeroporto.getSuperficie() + ". Gli aerei disponibili sono "+ VettoreAerei(aeroporto.getAerei()) +" Ci lavorano i piloti " + VettorePiloti(aeroporto.getPiloti()));
 
     }
     public static Aeroporto InserimentoAeroporto(){
@@ -47,6 +38,8 @@ public class Main {
         String codiceAux, produttoreAux, modelloAux;
         int nPostiAux;
 
+        System.out.println("Inserimento degli aerei");
+
         for(int i = 0; i < aerei.length; i++){
 
             System.out.print("Inserire il codice dell'aereo: ");
@@ -54,6 +47,8 @@ public class Main {
 
             System.out.print("Inserire il numero di posti dell'aereo: ");
             nPostiAux = input.nextInt();
+
+            input.nextLine();
 
             System.out.print("Inserire il produttore dell'aereo: ");
             produttoreAux = input.nextLine();
@@ -76,10 +71,14 @@ public class Main {
         int nPatenteAux;
         String nomeAux, cognomeAux, ruoloAux;
 
+        System.out.println("Inserimento dei piloti");
+
         for(int i = 0; i < piloti.length; i++){
 
             System.out.print("Inserire il numero della patente del pilota: ");
             nPatenteAux = input.nextInt();
+
+            input.nextLine();
 
             System.out.print("Inserire il nome del pilota: ");
             nomeAux = input.nextLine();
@@ -105,6 +104,7 @@ public class Main {
             System.out.println("Scelta del ruolo dei piloti");
             System.out.println("1- Comandante");
             System.out.println("2- Primo ufficiale");
+            System.out.print("Scelta: ");
             scelta = input.nextInt();
 
             if(scelta < 1 || scelta > 2)
@@ -123,7 +123,7 @@ public class Main {
         String vettorePiloti = "";
 
         for(int i = 0; i < piloti.length; i++){
-            vettorePiloti += ", " + piloti[i];
+            vettorePiloti += piloti[i].toString() + "; ";
         }
 
         return vettorePiloti;
@@ -133,7 +133,7 @@ public class Main {
         String vettoreAerei = "";
 
         for(int i = 0; i < aerei.length; i++){
-            vettoreAerei += ", " + aerei[i];
+            vettoreAerei += aerei[i].toString() + "; ";
         }
 
         return vettoreAerei;
