@@ -110,4 +110,24 @@ public class Main {
 
     }
     
+    public static String VettorePiloti(Pilota piloti[]){
+        String vettorePiloti = "";
+
+        for(int i = 0; i < piloti.length; i++){
+            vettorePiloti += ", " + piloti[i];
+        }
+
+        return vettorePiloti;
+    }
+
+    public static String VettoreAerei(Aereo aerei[]){
+        String vettoreAerei = "";
+
+        for(int i = 0; i < aerei.length; i++){
+            vettoreAerei += ", " + aerei[i];
+        }
+
+        return vettoreAerei;
+    }
+    
 }
