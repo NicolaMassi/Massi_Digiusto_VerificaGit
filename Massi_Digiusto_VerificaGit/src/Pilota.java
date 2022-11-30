@@ -47,5 +47,5 @@ public class Pilota {
     public String getRuolo() {
         return ruolo;
     }
-    
+
 }
