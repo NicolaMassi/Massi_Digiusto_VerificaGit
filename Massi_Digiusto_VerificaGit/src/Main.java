@@ -26,8 +26,8 @@ public class Main {
         superficie = input.nextDouble();
         input.nextLine();
 
-        inserimentoAerei(aerei);
-        inseriemntoPiloti(piloti);
+        inserimentoAerei(input, aerei);
+        inseriemntoPiloti(input, piloti);
 
         aeroporto = new Aeroporto(citta, superficie, aerei, piloti);
         return aeroporto;
