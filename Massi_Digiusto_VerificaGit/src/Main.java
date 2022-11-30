@@ -12,8 +12,8 @@ public class Main {
     public static Aeroporto InserimentoAeroporto(){
         Scanner input = new Scanner(System.in);
         Aeroporto aeroporto = new Aeroporto();
-        Aereo aerei[];
-        Pilota piloti[];
+        Aereo aerei[] = new Aereo[3];
+        Pilota piloti[] = new Pilota[3];
         String citta;
         double superficie;
        
@@ -27,7 +27,7 @@ public class Main {
         input.nextLine();
 
         inserimentoAerei(input, aerei);
-        inseriemntoPiloti(input, piloti);
+        inserimentoPiloti(input, piloti);
 
         aeroporto = new Aeroporto(citta, superficie, aerei, piloti);
         return aeroporto;
@@ -96,8 +96,9 @@ public class Main {
             System.out.println("Scelta del ruolo dei piloti");
             System.out.println("1- Comandante");
             System.out.println("2- Primo ufficiale");
+            scelta = input.nextInt();
 
-            if((scelta < 1 || scelta > 2)
+            if(scelta < 1 || scelta > 2)
                 System.out.println("Hai scelto un valore sbagliato. RIPROVA");
 
         }while(scelta < 1 || scelta > 2);
